@@ -12,6 +12,11 @@ if [[ "$REF" == "development" ]]; then
     echo "RELEASE_VERSION=$COMMIT_ID" >> $GITHUB_ENV
     echo "GITOPS_BRANCH=development" >> $GITHUB_ENV
 
+elif [[ "$REF" == "develop" ]]; then
+    printf "Branch name: $REF \nCommit ID: $COMMIT_ID"
+    echo "RELEASE_VERSION=$COMMIT_ID" >> $GITHUB_ENV
+    echo "GITOPS_BRANCH=develop" >> $GITHUB_ENV
+
 elif [[ "$REF" == "main" ]]; then
     printf "Branch name: $REF \nCommit ID: $COMMIT_ID"
     echo "RELEASE_VERSION=$COMMIT_ID" >> $GITHUB_ENV
